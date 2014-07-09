@@ -9,7 +9,8 @@
 
   %div.row
     %div.col-md-4.service#profile
-      %h4 Housing Data Profile
+      =link_to profile_municipality_path do
+        %h4 Housing Data Profile
       
       = link_to image_tag('profile.png', class: 'service'), profile_municipality_path
 
@@ -22,14 +23,15 @@
           to its neighbors, similar cities & towns, the region,
           and the state.
         %li
-          Export table to CSV.
+          Export the data profile to CSV.
       %a.btn.btn-default{href: profile_municipality_path}
-        View summary tables
+        View data profile
         &nbsp;
         %span.glyphicon.glyphicon-arrow-right
 
     %div.col-md-4.service#report
-      %h4 Basic Needs Assessment
+      =link_to report_municipality_path do
+        %h4 Basic Needs Assessment
       
       = link_to image_tag('report.png', class: 'service'), report_municipality_path
 
@@ -42,15 +44,16 @@
         %li
           Provides most of the required data elements for the housing needs assessment section of a housing production plan.
         %li
-          Export document to Word.
+          Export the report to Word for inclusion in your Housing Production Plan.
       %a.btn.btn-default{href: report_municipality_path}
-        Start planning
+        Read needs assessment
         &nbsp;
         %span.glyphicon.glyphicon-arrow-right
 
 
     %div.col-md-4.service#download
-      %h4 Data Download
+      =link_to download_municipality_path do
+        %h4 Data Download
       
       = link_to image_tag('download.png', class: 'service'), download_municipality_path
 
