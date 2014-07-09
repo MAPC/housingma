@@ -88,15 +88,15 @@ class Profile < CommonFacade
   # TODO: Refactor this and possibly move it into a module.
   def to_csv
     CSV.generate do |csv|
-      csv << ["Housing Data Profile: #{self.muni}",
-               nil,
-               nil,
-               nil,
-               nil,
-               "Generated on:",
-               DateTime.now.strftime("%d %b %Y"),
-              "Housing MA",
-              "http://housing.ma"]
+      csv << [  "Housing Data Profile: #{self.muni}",
+                nil,
+                "Generated on",
+                DateTime.now.strftime("%d %b %Y"),
+                "via Housing MA",
+                "http://housing.ma",
+                "by the Metropolitan Area Planning Council",
+                "http://mapc.org"
+               ]
 
       csv << nil_row(nil)
 
