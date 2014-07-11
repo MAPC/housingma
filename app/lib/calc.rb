@@ -1,5 +1,5 @@
 class Calc
-  include ActionView::Helpers::NumberHelper 
+  include ActionView::Helpers::NumberHelper
 
   # Calculates the difference between two numbers
   # and presents it in a form appropriate for a view.
