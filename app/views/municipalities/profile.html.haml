@@ -12,9 +12,9 @@
       %h2{id: "export"}
         Export
       %p
-        Export the #{@profile.muni} Housing Data Profile to CSV.
+        Export the #{@profile.muni} Housing Data Profile to a CSV file.
       %a.btn.btn-lg.btn-primary{href: profile_municipality_path(@profile.muni, format: 'csv')}
-        Export to CSV (CSV)
+        Export to CSV (.csv)
 
     = render partial: 'scrollspy/scrollspy', locals: { content: @profile, export: true }
 

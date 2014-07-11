@@ -4,3 +4,5 @@ require 'active_record/pluck_all'
 require 'active_record/create_or_update'
 
 require 'active_support/indefinitize'
+
+require 'significant_figures'

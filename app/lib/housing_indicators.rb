@@ -12,7 +12,6 @@ module HousingIndicators
     (pop10_2034 + pop10_3564)
   end
 
-
   def househld_30_60_2010
     (hh10_3044 + hh10_4559)
   end

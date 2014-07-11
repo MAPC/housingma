@@ -1,4 +1,5 @@
 class Calc
+  include ActionView::Helpers::NumberHelper 
 
   # Calculates the difference between two numbers
   # and presents it in a form appropriate for a view.
@@ -47,13 +48,13 @@ class Calc
 
   def percent_text(options={})
     percent_rep = options.fetch(:percent) { " percent" }
-    "#{ percent(options).abs.round }" << percent_rep
+    "#{ number_with_delimiter percent(options).abs.sigfig(2) }" << percent_rep
   end
 
 
   def percent_change_text(options={})
     percent_rep = options.fetch(:percent) { " percent" }
-    "#{ percent_change(options).abs.round }" << percent_rep
+    "#{ number_with_delimiter percent_change(options).abs.sigfig(2) }" << percent_rep
   end
 
 
@@ -86,7 +87,7 @@ class Calc
 
     def value_of_change
       value = @second_number ? (@second_number - @number).abs : @number
-      value.abs.round
+      number_with_delimiter value.abs.sigfig(2)
     end
 
 
