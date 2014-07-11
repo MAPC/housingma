@@ -29,4 +29,14 @@ $(document).ready(function () {
     $('html, body').animate({ scrollTop: 0 }, 'slow');
     $('input').focus();
   });
+
+  var offset = 50;
+
+  $('.bs-sidenav li a').click(function(event) {
+    event.preventDefault();
+    $($(this).attr('href'))[0].scrollIntoView();
+    scrollBy(0, -offset);
+  });
+
+
 });
