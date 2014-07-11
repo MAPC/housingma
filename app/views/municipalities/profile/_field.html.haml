@@ -5,9 +5,9 @@
   %td.muni
     = trim @profile.housing.send "#{field}"
     %span.moe= moe_or_blank(@profile.housing, "#{field}")
-  %td.operation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #{field.operation.pluralize}:
-  %td= trim @profile.neighbors.send      field.with_op
-  %td= trim @profile.community_type.send field.with_op
-  %td= trim @profile.region.send         field.with_op
-  %td= trim @profile.county.send         field.with_op
-  %td= trim @profile.state.send          field.with_op
+  %td.operation #{field.operation.pluralize}:
+  %td= @profile.neighbors.send      field.with_op
+  %td= @profile.community_type.send field.with_op
+  %td= @profile.region.send         field.with_op
+  %td= @profile.county.send         field.with_op
+  %td= @profile.state.send          field.with_op

@@ -1,7 +1,7 @@
 module MunicipalitiesHelper
   def trim(number)
     return "&mdash;".html_safe if number.nil?
-    ("%#g" % number.to_f).gsub(/0*$/, '')
+    number_with_delimiter number.sigfig(6)
   end
 
   def moe_or_blank(object, field_name)
