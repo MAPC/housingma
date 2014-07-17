@@ -26,7 +26,7 @@ class CommonFacade
 
   def method_missing(method_name, *args)
     value = handle_template_exceptions { @housing.send(method_name) }
-    return 'N/A' if value.nil?
-    args.first && args.first[:round] == false ? value : value.round
+    return nil if value.nil?
+    args.first && args.first[:round] == false ? value : value.sigfig(2)
   end
 end

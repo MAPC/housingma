@@ -30,6 +30,7 @@ $(document).ready(function () {
     $('input').focus();
   });
 
+  // From http://stackoverflow.com/questions/9288482/how-do-i-set-the-offset-for-scrollspy-in-bootstrap
   var offset = 50;
 
   $('.bs-sidenav li a').click(function(event) {
