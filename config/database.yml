@@ -37,7 +37,8 @@ commondata:
 housing_data:
   adapter:  postgresql
   encoding: unicode
-  database: hppbackup
+  database: housing_data
+  host:     localhost
   pool: 5
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -62,4 +63,11 @@ test:
   adapter: postgresql
   encoding: unicode
   database: housingma_test
+  pool: 5
+
+
+production:
+  adapter:  postgresql
+  encoding: unicode
+  database: housingma_dev
   pool: 5

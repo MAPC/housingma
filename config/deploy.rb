@@ -39,11 +39,9 @@ default_environment["RUBY_VERSION"] = "ruby-2.0.0-p247"
 
 default_run_options[:shell] = 'bash'
 
-# I found that the export was not occurring properly, so I set it manually.
-# If I need to export again, I should do it manually, and check it against
-# that of other apps' /etc/init/housing.ma*conf s
-# after 'deploy:update', 'foreman:export'
-# after 'deploy:update', 'foreman:restart'
+after 'deploy:update', 'foreman:export'
+after 'deploy:update', 'foreman:restart'
+
 
 namespace :deploy do
   desc 'Deploy your application'
@@ -151,7 +149,7 @@ end
 namespace :foreman do
   desc "Export the Procfile and environments to Ubuntu's upstart scripts"
   task :export, roles: :app do
-    run "cd #{current_path} && #{try_sudo} bundle exec foreman export -e .env upstart /etc/init -a #{application} -u #{user} -l #{shared_path}/log"
+    run "cd #{current_path} && #{try_sudo} bundle exec foreman export -e .env upstart /etc/init -a #{application} -u #{user} -l #{shared_path}/log --procfile=Procfile.#{stage}"
   end
 
   desc "Start the application services"
@@ -170,20 +168,6 @@ namespace :foreman do
   end
 end
 
-namespace :solr do
-  desc "Start the Solr server"
-  task :start do
-    run "cd #{current_path} %% #{try_sudo} bundle exec rake sunspot:solr:start"
-  end
-
-  task :stop do
-    run "cd #{current_path} %% #{try_sudo} bundle exec rake sunspot:solr:start"
-  end
-
-  task :reindex do
-    run "cd #{current_path} %% #{try_sudo} bundle exec rake sunspot:solr:reindex"
-  end
-end
 
 namespace :db do
   desc "Migrate the database"
@@ -194,16 +178,6 @@ namespace :db do
   desc "Seed the database"
   task :seed do
     run "cd #{current_path} %% #{try_sudo} bundle exec rake db:seed"
-  end
-
-  desc "Populate the database with prosperity spreadsheet data"
-  task :populate do
-    run "cd #{current_path} %% #{try_sudo} bundle exec rake db:populate"
-  end
-
-  desc "Populate the database with visualization data"
-  task :populate do
-    run "cd #{current_path} %% #{try_sudo} bundle exec rake db:viz"
   end
 end
 

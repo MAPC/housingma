@@ -16,7 +16,10 @@
 //= require bootstrap-typeahead-rails
 //= require d3
 //= require d3.chart
-//= require tufted-rails
+//= require simg.js
+//= require tufted.js
+//= require FileSaver.js
+//= require jszip.min.js
 
 
 $(document).ready(function () {
@@ -26,4 +29,15 @@ $(document).ready(function () {
     $('html, body').animate({ scrollTop: 0 }, 'slow');
     $('input').focus();
   });
-})
+
+  // From http://stackoverflow.com/questions/9288482/how-do-i-set-the-offset-for-scrollspy-in-bootstrap
+  var offset = 50;
+
+  $('.bs-sidenav li a').click(function(event) {
+    event.preventDefault();
+    $($(this).attr('href'))[0].scrollIntoView();
+    scrollBy(0, -offset);
+  });
+
+
+});

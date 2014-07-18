@@ -2,6 +2,8 @@ require 'csv'
 
 class Profile < CommonFacade
 
+  include MunicipalitiesHelper
+
   # Include Field association
   def initialize(municipality)
     @topic_areas = TopicArea.includes(:fields).all
@@ -86,15 +88,15 @@ class Profile < CommonFacade
   # TODO: Refactor this and possibly move it into a module.
   def to_csv
     CSV.generate do |csv|
-      csv << ["Housing Data Profile: #{self.muni}",
-               nil,
-               nil,
-               nil,
-               nil,
-               "Generated on:",
-               DateTime.now.strftime("%d %b %Y"),
-              "Housing MA",
-              "http://housing.ma"]
+      csv << [  "Housing Data Profile: #{self.muni}",
+                nil,
+                "Generated on",
+                DateTime.now.strftime("%d %b %Y"),
+                "via Housing MA",
+                "http://housing.ma",
+                "by the Metropolitan Area Planning Council",
+                "http://mapc.org"
+               ]
 
       csv << nil_row(nil)
 
@@ -116,19 +118,8 @@ class Profile < CommonFacade
 
           topic.subtopics.each do |subtopic|
             csv << nil_row("\t\t#{subtopic}")
-
-            subtopic.fields.each do |field|
-              csv << ["\t\t\t#{field.alias}",
-                      self.housing.send(field.to_s),
-                      self.housing.send(field.to_s << "_me"),
-                      field.operation,
-                      self.neighbors.send(field.with_op),
-                      self.community_type.send(field.with_op),
-                      self.region.send(field.with_op),
-                      self.county.send(field.with_op),
-                      self.state.send(field.with_op)]
-
-            end
+            
+            subtopic.fields.each{ |field| csv << field_row(field) }
           end
         end
       end
@@ -136,6 +127,18 @@ class Profile < CommonFacade
   end
 
   private
+
+    def field_row(field)
+      ["\t\t\t#{field.alias}",
+      self.housing.send(field.to_s),
+      moe_or_blank(self.housing, field).to_s.gsub("&plusmn; ", ''),
+      field.operation,
+      self.neighbors.send(field.with_op),
+      self.community_type.send(field.with_op),
+      self.region.send(field.with_op),
+      self.county.send(field.with_op),
+      self.state.send(field.with_op)]
+    end
 
     def nil_row(text)
       [text,nil,nil,nil,nil,nil,nil]

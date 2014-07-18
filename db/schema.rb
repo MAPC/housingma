@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140510001655) do
+ActiveRecord::Schema.define(:version => 20140527155909) do
 
   create_table "fields", :force => true do |t|
     t.string   "title"
@@ -26,30 +26,40 @@ ActiveRecord::Schema.define(:version => 20140510001655) do
     t.text     "methodology"
   end
 
+  create_table "quotations", :force => true do |t|
+    t.string   "quote"
+    t.string   "author"
+    t.string   "agency"
+    t.integer  "sort_order"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "published",  :default => false
+  end
+
   create_table "subtopics", :force => true do |t|
     t.string   "title"
-    t.text     "narrative"
+    t.text     "narrative",  :default => "", :null => false
     t.integer  "sort_order"
     t.integer  "topic_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "topic_areas", :force => true do |t|
     t.string   "title"
-    t.text     "narrative"
+    t.text     "narrative",  :default => "", :null => false
     t.integer  "sort_order"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "topics", :force => true do |t|
     t.string   "title"
-    t.text     "narrative"
+    t.text     "narrative",     :default => "", :null => false
     t.integer  "sort_order"
     t.integer  "topic_area_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
 end

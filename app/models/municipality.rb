@@ -25,20 +25,11 @@ class Municipality < ActiveRecord::Base
     name
   end
 
+  def region
+    regions.first
+  end
 
-  # Prevent :geom from being selected
-  #   call Municipality.unscoped to get
-  #   access to :geom
-
-  default_scope { includes(:housing_data) }
-  # default_scope { select(['municipalities.id',
-  #                       'municipalities.name',
-  #                       'municipalities.muni_id',
-  #                       'municipalities.community_subtype_id',
-  #                       'municipalities.created_at',
-  #                       'municipalities.updated_at',
-  #                       'municipalities.county_id',
-  #                       'municipalities.state_id']).order('municipalities.id') }
+  default_scope { includes(:housing_data).order(:name) }
   
   # scope
   def nearest(lim=10)

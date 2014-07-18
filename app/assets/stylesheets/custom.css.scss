@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:700|Lato:400,300|Merriweather:400,400italic,300);
+
+/* basic typography */
+
 $orange:     #F7AD4D;
 $light-blue: #5FB0D8;
 $dark-blue:  #134B8E;
@@ -10,8 +14,22 @@ $light-border: 1px solid #DDD;
 $select-background:   #00C6D4;
 $features-background: steelblue;
 
+$brand-primary:         #83B9F2 !default;
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+$state-success-bg:      #dff0d8 !default;
+$state-info-bg:         #d9edf7 !default;
+$state-warning-bg:      #FCF3BA !default;
+$state-danger-bg:       #f2dede !default;
+$state-primary-bg:      #D5EAFF !default;
+
 body {
   overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
   font-size: 16px;
   line-height: 24px;
 }
@@ -19,7 +37,17 @@ body {
 p { font-size: 16px; }
 
 
+.logo {
+  position: relative;
+  text-align: center;
+  img {
+    display: inline-block;
+  }
+}
 
+img.whats-inside {
+  max-height: 150px;
+}
 
 /* Header & Navigation */
 
@@ -29,11 +57,16 @@ p { font-size: 16px; }
 
 .title {
   font-size: 64px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  margin-top: -10px;
+  margin-bottom: -5px;
 }
 
 .subtitle {
   font-size: 32px;
-  font-style: italic;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
   line-height: 36px;
 }
 
@@ -58,7 +91,12 @@ p { font-size: 16px; }
   width:      100%;
 }
 
-.navbar-brand { float: none; }
+.navbar-brand {
+  float: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
 
 .navbar-nav {
   position: relative;
@@ -75,9 +113,12 @@ p { font-size: 16px; }
 .navbar {
   background-color: #FFF;
   border-bottom: $light-border;
+  font-weight: 400;
 }
 
-
+#services {
+  a.dropdown-toggle { }
+}
 
 
 /* Home   */
@@ -85,7 +126,7 @@ p { font-size: 16px; }
 .tagline {
   background-color: $orange;
   color: #FFF;
-  margin-top: 50px;
+  margin-top: 40px;
   padding: 3px 0 10px;
   h2, h3, h4 { 
     text-align: center;
@@ -125,9 +166,14 @@ p { font-size: 16px; }
   color: #FFF;
   padding: 0 50px;
   text-align: center;
+  p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+  }
   h4 {
     font-weight: bold;
     font-size: 22px;
+    letter-spacing: 0.7px;
   }
   img {
     margin: 10px 0;
@@ -150,14 +196,15 @@ p { font-size: 16px; }
 }
 
 #quote {
-  font-family: serif;
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
   background-color: #BBBBBE;
-  color: #FFF;
-  padding-top:    40px;
-  padding-bottom: 10px;
+  color:            #FFF;
+  padding:    50px 70px 20px 70px;
+
   h3 {
-    font-size: 35px;
-    line-height: 42px;
+    font-size:      2em;
+    line-height:    1.5em;
     padding-bottom: 25px;
   }
   p {
@@ -189,12 +236,13 @@ input {
 .input-group-btn {
   button {
     position:  relative;
-    bottom:     4px;
+    bottom:    3px;
     font-size: 25px !important;
     height:    56px !important;
+    // border-bottom: none;
     span {
       margin-left: 4px;
-      top:        3px;
+      top:         3px;
     }
   }
 }
@@ -245,12 +293,31 @@ input {
 
 /* Municipalities / Services */
 
+#profile {
+  img {
+    background-color: $state-warning-bg;
+  }
+}
+
+#report {
+  img {
+    background-color: $state-success-bg;
+  }
+}
+
+#download {
+  img {
+    background-color: $state-primary-bg;
+  }
+}
+
 .service {
   min-height:   250px;
   margin-top:   30px;
   padding:    0 40px;
 
   h2, h3, h4 { text-align: center; }
+  h4 { color: #000; }
 
   border-right: $light-border;
   &:last-of-type {
@@ -258,9 +325,9 @@ input {
   }
 
   img {
+    max-height: 200px;
     margin: 0 auto 20px;
     padding: 15px;
-    background-color: #EEE;
     display: block;
     border-radius: 10px;
   }
@@ -343,15 +410,16 @@ input {
 
 table {
   width: 100%;
-  font-size: 90%;
+  font-size: 1em;
   thead {
     border-top:    $light-border;
     border-bottom: $light-border;
     vertical-align: bottom;
   }
-  th { font-weight: 500; }
+  th { font-weight: 400; }
   td, th {
-    padding: 10px;
+    padding: 10px 5px 8px 5px;
+    min-height: 40px;
     border: $light-border;
     text-align: right;
     &.attr {
@@ -370,11 +438,27 @@ table {
   }
 }
 
+table.data thead {
+  th {
+    font-weight: bold;
+  }
+}
+
+table.data {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .borderless td, .borderless th {
   border: none;
 }
 
 .topic-area, .topic, .subtopic {
+  th {
+    // TODO Headers should be visible when jumping with scrollspy.
+    // padding-top: 60px;
+    // margin-top: -60px;
+  }
   h1, h2, h3, h4, h5, h6 {
     text-align: left;
   }
@@ -383,6 +467,18 @@ table {
 .topic-area { background-color: #DDD }
 .topic      { background-color: #EEE }
 .subtopic   { background-color: #FFF }
+
+table.guide { 
+  max-width: 700px;
+  th {
+    width: 120px;
+    font-weight: 700;
+    text-align: right;
+  }
+  td {
+    text-align: left;
+  }
+}
 
 span.moe {
   color:       #AAA;
@@ -417,6 +513,41 @@ ul.similar, ul.neighbors {
 }
 
 
+span.super {
+  vertical-align: super;
+  font-size: 80%;
+}
+
+
+/* Service: Basic Needs Assessment */
+
+.report {
+
+  h1,h2,h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-family:   'Merriweather', serif;
+    font-weight:   300;
+    max-width:     40em;
+    font-size:     1.2em;
+    line-height:   1.94em;
+    margin-bottom: 20px;
+    text-align:    justify;
+  }
+
+  li {
+    font-family:   'Merriweather', serif;
+    font-weight:   300;
+    font-size: 1.2em;
+    line-height: 1.94em;
+    max-width:     40em;
+  }
+
+
+}
 
 /* Static Pages */
 
@@ -464,6 +595,19 @@ ul.contact {
 }
 
 
+.visualization {
+  width:90%;
+  height: 90%;
+}
+
+
+/* User Guide */
+
+.guide-topic       { background-color: none !important; }
+.guide-subtopic    { font-size:  140%; }
+.guide-field-alias { margin-top: 30px; }
+
+
 /* Footer */
 
 .footer {
@@ -489,7 +633,7 @@ ul.contact {
   text-align: center;
   a {
     margin: 0 20px;
-    font-weight: bold;
+    font-weight: 400;
     text-transform: uppercase;
   }
 }
@@ -497,6 +641,9 @@ ul.contact {
 #built {
   position: relative;
   left:     10px;
-  bottom: -110px;
-  opacity:   0.7;
+  bottom:  -150px;
+  opacity:   0.2;
+  img {
+    width: 50px;
+  }
 }

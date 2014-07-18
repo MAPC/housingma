@@ -8,10 +8,11 @@
     production planning process:
 
   %div.row
-    %div.col-md-4.service
-      %h4 Housing Data Profile
+    %div.col-md-4.service#profile
+      =link_to profile_municipality_path do
+        %h4 Housing Data Profile
       
-      %img{src: 'https://d2k1ftgv7pobq7.cloudfront.net/images/landing/efc043d0d7d8b238848951324e866c8b/what-is-trello1.png'}
+      = link_to image_tag('profile.png', class: 'service'), profile_municipality_path
 
       %a.btn.btn-lg.btn-warning{href: profile_municipality_path} Select
       %ul
@@ -22,48 +23,50 @@
           to its neighbors, similar cities & towns, the region,
           and the state.
         %li
-          Export table to CSV.
+          Export the data profile to CSV.
       %a.btn.btn-default{href: profile_municipality_path}
-        View summary tables
+        View data profile
         &nbsp;
         %span.glyphicon.glyphicon-arrow-right
 
-    %div.col-md-4.service
-      %h4 Basic Needs Assessment
+    %div.col-md-4.service#report
+      =link_to report_municipality_path do
+        %h4 Basic Needs Assessment
       
-      %img{src: 'https://d2k1ftgv7pobq7.cloudfront.net/images/landing/efc043d0d7d8b238848951324e866c8b/what-is-trello1.png'}
+      = link_to image_tag('report.png', class: 'service'), report_municipality_path
 
       %a.btn.btn-lg.btn-success{href: report_municipality_path} Select
       %ul
         %li
-          View interactive visualizations of ### key housing indicators for #{@muni}.
+          Read interpretive text explaining housing trends in #{@muni}.
         %li
-          Read and export interpretive text tailored for housing trends in #{@muni}.
+          View interactive visualizations of six key housing indicators for #{@muni}.
         %li
-          Provides most of the required data elements for a housing production plan.
+          Provides most of the required data elements for the housing needs assessment section of a housing production plan.
         %li
-          Export document to Word.
+          Export the report to Word for inclusion in your Housing Production Plan.
       %a.btn.btn-default{href: report_municipality_path}
-        Start planning
+        Read needs assessment
         &nbsp;
         %span.glyphicon.glyphicon-arrow-right
 
 
-    %div.col-md-4.service
-      %h4 Data Download
+    %div.col-md-4.service#download
+      =link_to download_municipality_path do
+        %h4 Data Download
       
-      %img{src: 'https://d2k1ftgv7pobq7.cloudfront.net/images/landing/efc043d0d7d8b238848951324e866c8b/what-is-trello1.png'}
+      = link_to image_tag('download.png', class: 'service'), download_municipality_path
 
       %a.btn.btn-lg.btn-primary{href: download_municipality_path} Select
       %ul
         %li
-          Download all ### currently available data points for all cities & towns in the state.
+          Download all currently available data points for all cities & towns in the state.
         %li
           Dig deeper and perform your own analyses.
         %li
-          Includes metadata and user guide.
+          Includes metadata.
       %a.btn.btn-default{href: download_municipality_path}
-        View datasets and guide
+        View data download
         &nbsp;
         %span.glyphicon.glyphicon-arrow-right
 

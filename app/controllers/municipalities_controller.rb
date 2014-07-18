@@ -1,7 +1,7 @@
 class MunicipalitiesController < ApplicationController
 
   def show
-    @muni = Municipality.find_by_name(params[:id].titleize)
+    @muni = Municipality.unscoped.find_by_name(params[:id].titleize)
   end
 
   def report
@@ -23,7 +23,7 @@ class MunicipalitiesController < ApplicationController
 
   def guide
     @guide = OpenStruct.new(topic_areas: TopicArea.all)
-    @muni  = Municipality.find_by_name(params[:id].titleize)
+    @muni  = Municipality.unscoped.find_by_name(params[:id].titleize)
   end
 
   def form
@@ -36,20 +36,23 @@ class MunicipalitiesController < ApplicationController
   end
 
   def export
-    @profile = Profile.new( Municipality.find_by_name(params[:id].titleize) )
+    @report = Report.new( Municipality.find_by_name(params[:id].titleize) )
 
     # Initialize DocxReplace with my template
-    doc = DocxReplace::Doc.new("#{Rails.root}/lib/assets/template.docx", "#{Rails.root}/tmp")
+    doc = DocxReplace::Doc.new("#{Rails.root}/lib/assets/template-2014-06-09.docx", "#{Rails.root}/tmp")
 
-    # Replace some variables
-    matches = doc.uniq_matches(/\{(\@[\w\.]*)\}/)
-    matches.each {|match| doc.replace("{#{match}}", "#{eval match}", true)}
+    # Specific variables: DateTime in the Word doc has issues with the formatting string
+    date = DateTime.now.strftime("%d %b %Y")
+    url  = "#{request.host}/#{params[:id]}/report}"
+
+    matches = doc.uniq_matches(/\#\{(.*?)\}/)
+    matches.each { |match| doc.replace("\#{#{match}}", "#{eval(match.strip)}", true) }
     
     # Write the document back to a temporary file
     tmp_file = Tempfile.new('word_template', "#{Rails.root}/tmp")
     doc.commit(tmp_file)
 
-    send_file tmp_file.path, filename: "#{@profile.muni} Housing Needs Assessment.docx", disposition: 'attachment'
+    send_file tmp_file.path, filename: "#{@report.muni} Housing Needs Assessment.docx", disposition: 'attachment'
   end
 
 end

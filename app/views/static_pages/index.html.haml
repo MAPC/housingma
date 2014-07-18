@@ -1,4 +1,12 @@
-%h1.center.title    Housing MA
+%div.row
+  %div.col-md-12
+    %div.logo
+      = image_tag 'logo.jpg'
+      %h1.title
+        Housing MA
+        %a{data: {toggle: 'modal', target: "#beta"}}
+          %small
+            Beta
 %h3.center.subtitle
   Housing data, visualizations, and interpretation for Massachusetts
 
@@ -27,23 +35,23 @@
   %div.col-lg-4.feature
     %h4 Rich Data
 
-    %img{src: 'https://d2k1ftgv7pobq7.cloudfront.net/images/landing/0c91be28312f6e79a7eecac6d182d399/what-is-trello2.png'}
+    = image_tag 'rich-data.png', class: 'whats-inside'
 
     %p
-      Easily access rich, value-added data compiled from U.S. Census, Building Permits, Zillow, MAPC Projections, and more. Compare your city or town to its neighbors, region, and state.
+      Access rich, value-added data compiled from U.S. Census, Building Permits, Zillow, MAPC Projections, and more. Compare your city or town to its neighbors, region, and state.
   
   %div.col-lg-4.feature
     %h4 Guidance
 
-    %img{src: 'https://d2k1ftgv7pobq7.cloudfront.net/images/landing/efc043d0d7d8b238848951324e866c8b/what-is-trello1.png'}
+    = image_tag 'guidance.png', class: 'whats-inside'
 
     %p
-      Discover insights into key housing indicators in your city or town. Visualizations, interpretive text, and a user guide help you navigate and understand the data.
+      Discover insights into key housing indicators in your city or town. Visualizations, interpretive text, and metadata help you navigate and understand the data.
 
   %div.col-lg-4.feature
     %h4 Something for Everyone
 
-    %img{src: 'https://d2k1ftgv7pobq7.cloudfront.net/images/landing/c897d8c6b5e7eefb6d058a04b4d8d739/what-is-trello3.png'}
+    = image_tag 'everyone.png', class: 'whats-inside'
 
     %p
       Housing MA was designed to be used by citizen committees and expert analysts alike. Text and charts automatically reflect your city or town, and downloading the data behind it is always a click away.
@@ -54,8 +62,26 @@
         %a{class: 'btn btn-lg btn-primary center', id: 'start-planning'} Start planning
 
 %div.row#quote
-  %div.col-xs-8.col-xs-offset-2.col-md-6.col-md-offset-3
+  %div.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
     %h3
-      The Housing MA portal tool took our housing needs assessment planning period from weeks to hours. I cannot recommend this tool enough.
+      "MAPC's Housing Data Portal will allow the municipalities in the region essentially instant access to data that usually takes weeks if not months to produce, allowing us to focus our limited resources on policy development instead of data production."
     %p
-      &mdash; Municipal Official, Town of Municipality
+      &mdash; Aaron Henry, Assistant Planning Directory, Town of Lexington
+
+
+%div.modal.fade#beta
+  %div.modal-dialog
+    %div.modal-content
+      %div.modal-header
+        %button.close{type: 'button', data: {dismiss: 'modal'}} &times;
+        %h4.modal-title
+          We're not done yet!
+      %div.modal-body
+        %p
+          This application is in the beta stage, meaning we're still developing the language and policies, and fixing a few bugs.
+        %p
+          The "Beta" link you just clicked will be removed when we're done.
+        %p
+          That said, feel free to look around and start using the site!
+        %p
+          Thank you.
