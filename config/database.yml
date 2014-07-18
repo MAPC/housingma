@@ -64,3 +64,10 @@ test:
   encoding: unicode
   database: housingma_test
   pool: 5
+
+
+production:
+  adapter:  postgresql
+  encoding: unicode
+  database: housingma_dev
+  pool: 5

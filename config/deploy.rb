@@ -149,7 +149,7 @@ end
 namespace :foreman do
   desc "Export the Procfile and environments to Ubuntu's upstart scripts"
   task :export, roles: :app do
-    run "cd #{current_path} && #{try_sudo} bundle exec foreman export -e .env upstart /etc/init -a #{application} -u #{user} -l #{shared_path}/log -t #{Rails.root}/lib/assets/upstart"
+    run "cd #{current_path} && #{try_sudo} bundle exec foreman export -e .env upstart /etc/init -a #{application} -u #{user} -l #{shared_path}/log"
   end
 
   desc "Start the application services"

@@ -13,7 +13,7 @@ gem 'rgeo-geojson'
 
 #    app server
 gem 'unicorn' 
-gem 'foreman', '0.64.0'
+gem 'foreman', '0.66.0'
 
 #    Render HAML content for narratives
 gem 'haml'
