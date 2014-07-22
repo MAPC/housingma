@@ -50,7 +50,7 @@ class MunicipalitiesController < ApplicationController
     
     # Write the document back to a temporary file
     tmp_file = Tempfile.new('word_template', "#{Rails.root}/tmp")
-    doc.commit(tmp_file)
+    doc.commit tmp_file.path
 
     send_file tmp_file.path, filename: "#{@report.muni} Housing Needs Assessment.docx", disposition: 'attachment'
   end
