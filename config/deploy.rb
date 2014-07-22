@@ -39,7 +39,7 @@ default_environment["RUBY_VERSION"] = "ruby-2.0.0-p247"
 
 default_run_options[:shell] = 'bash'
 
-after 'deploy:update', 'foreman:export'
+# after 'deploy:update', 'foreman:export' # exporting doesn't presently set gid, which is needed in production
 after 'deploy:update', 'foreman:restart'
 
 
