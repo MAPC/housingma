@@ -12,7 +12,7 @@ gem 'rgeo'
 gem 'rgeo-geojson'
 
 #    app server
-gem 'unicorn' 
+gem 'unicorn', group: :production
 gem 'foreman', '0.66.0'
 
 #    Render HAML content for narratives
@@ -51,6 +51,8 @@ group :development, :test do
   gem 'capybara', '1.1.2'
   gem 'launchy'
 end
+
+gem "codeclimate-test-reporter", group: :test, require: nil
 
 # Gems used only for assets and not required
 # in production environments by default.
