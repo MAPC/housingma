@@ -97,7 +97,9 @@ describe Field do
       @field.alias = "Units Per Volume"
       @field.operation = "total"
     end
-    its(:full_alias) { should == "Total Units Per Volume"}
+    it "should have the right one" do
+      @field.full_alias.should == "Total Units Per Volume"
+    end
   end
 
   describe "#with_op" do
@@ -106,7 +108,9 @@ describe Field do
       @field.alias = "Units Per Volume"
       @field.operation = "total"
     end
-    its(:with_op) { should == "total_unit_per_vl" }
+    it "should have the right one" do
+      @field.with_op.should == "total_unit_per_vl"
+    end
   end
 
 end

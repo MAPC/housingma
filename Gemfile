@@ -47,9 +47,14 @@ end
 group :development, :test do
   gem 'progress_bar'
 
-  gem 'rspec-rails'
-  gem 'capybara', '1.1.2'
+  gem 'rspec-rails', '3.0.1'
+  gem 'capybara',    '2.2.0'
   gem 'launchy'
+end
+
+group :test do
+  gem 'rake'
+  # gem 'codeclimate-test-reporter', require: nil
 end
 
 # Gems used only for assets and not required
