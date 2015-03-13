@@ -24,7 +24,7 @@ commondata: &commondata
   <<: *default
   # adapter: postgis          # TODO: Not clear if this is really required
   # postgis_extension: true
-  database: <%= ENV.fetch('COMMON_DB_NAME') { 'metrofuture_development' } %>
+  database: <%= ENV.fetch('COMMON_DB_NAME') { 'mapc' } %>
   schema_search_path: <%= ENV.fetch('DB_SCHEMA_SEARCH_PATH') { 'public,postgis' } %>
 
 #
