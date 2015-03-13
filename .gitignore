@@ -14,13 +14,7 @@
 /log/*.log
 /tmp
 
-
-.DS_Store
-Gemfile.lock
-
-
 # Never commit a .env file
 
 .env
 /doc/
-/config/database.yml
