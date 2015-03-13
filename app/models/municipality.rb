@@ -1,5 +1,5 @@
 class Municipality < ActiveRecord::Base
-  establish_connection 'commondata'
+  establish_connection 'geographic'
 
   GEOFACTORY = RGeo::Geographic.spherical_factory(srid: 4326)
   set_rgeo_factory_for_column(:geom, GEOFACTORY)

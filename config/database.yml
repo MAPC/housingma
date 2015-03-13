@@ -27,6 +27,15 @@ commondata: &commondata
   database: <%= ENV.fetch('COMMON_DB_NAME') { 'mapc' } %>
   schema_search_path: <%= ENV.fetch('DB_SCHEMA_SEARCH_PATH') { 'public,postgis' } %>
 
+
+geographic: &geographic
+  <<: *default
+  # adapter: postgis          # TODO: Not clear if this is really required
+  # postgis_extension: true
+  database: <%= ENV.fetch('GEOGRAPHIC_DB_NAME') { 'geographic' } %>
+  schema_search_path: <%= ENV.fetch('DB_SCHEMA_SEARCH_PATH') { 'spatial,public,postgis' } %>
+
+
 #
 # TODO: This should be rolled into the housingma database.
 #
