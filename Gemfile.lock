@@ -64,6 +64,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
+    crease (0.1.1)
     d3-rails (3.5.5)
       railties (>= 3.1)
     diff-lcs (1.2.5)
@@ -212,6 +213,7 @@ DEPENDENCIES
   capistrano-unicorn (= 0.2.0)
   capybara (= 2.2.0)
   coffee-rails (~> 3.2.1)
+  crease
   d3-rails
   docx_replace!
   foreman (= 0.66.0)

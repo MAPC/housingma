@@ -13,19 +13,20 @@ gem 'rgeo'
 gem 'rgeo-geojson'
 
 #    app server
-gem 'unicorn' 
+gem 'unicorn'
 gem 'foreman', '0.66.0'
 
 #    Render HAML content for narratives
 gem 'haml'
 gem 'd3-rails'
 gem 'tufted-rails' # Terse D3 by Matt Gardner (allthesignals)
+gem 'crease' # Simpler text helpers by Matt Cloyd (beechnut)
 
 #    Export Word files
 gem 'docx_replace', git: "git://github.com/beechnut/docx_replace.git"
 
 #    Autocomplete
-gem 'twitter-typeahead-rails'   
+gem 'twitter-typeahead-rails'
 gem 'bootstrap-typeahead-rails'
 
 #      For user management of plan
