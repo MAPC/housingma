@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 ruby '2.1.5'
 
 gem 'rails', '3.2.13'
@@ -13,7 +13,7 @@ gem 'rgeo'
 gem 'rgeo-geojson'
 
 #    app server
-gem 'unicorn'
+gem 'puma'
 gem 'foreman', '0.66.0'
 
 #    Render HAML content for narratives
