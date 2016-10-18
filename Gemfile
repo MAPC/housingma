@@ -18,6 +18,7 @@ gem 'foreman', '0.66.0'
 
 #    Render HAML content for narratives
 gem 'haml'
+gem 'redcarpet' # Render Markdown in HAML
 gem 'd3-rails'
 gem 'tufted-rails' # Terse D3 by Matt Gardner (allthesignals)
 gem 'crease' # Simpler text helpers by Matt Cloyd (beechnut)
