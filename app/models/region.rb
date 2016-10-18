@@ -1,6 +1,6 @@
 class Region < ActiveRecord::Base
-  establish_connection 'geographic'
-  
+  establish_connection ENV.fetch('GEOGRAPHIC_DB_URL')
+
   has_and_belongs_to_many :municipalities
   has_many :housing_data, through: :municipalities
 

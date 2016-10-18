@@ -1,5 +1,5 @@
 class CommunityType < ActiveRecord::Base
-  establish_connection 'commondata'
+  establish_connection ENV.fetch('COMMON_DB_URL')
 
   has_many :community_subtypes
   has_many :municipalities,    through: :community_subtypes
