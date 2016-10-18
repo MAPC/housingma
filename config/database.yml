@@ -25,12 +25,6 @@ commondata: &commondata
   pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
   schema_search_path: <%= ENV.fetch('COMMON_DB_SCHEMA_SEARCH_PATH') { 'public,postgis' } %>
 
-
-geographic: &geographic
-  url: <%= ENV.fetch('GEOGRAPHIC_DB_URL') %>
-  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
-  schema_search_path: <%= ENV.fetch('GEO_DB_SCHEMA_SEARCH_PATH') { 'spatial,public,postgis' } %>
-
 housing_data:
   url: <%= ENV.fetch('HOUSING_DATA_DB_URL') %>
   pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
