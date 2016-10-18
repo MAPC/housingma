@@ -12,20 +12,23 @@
     Helping communities plan for the housing needed to create a vibrant and economically competitive Commonwealth
 
 %div.row#town-select
-  %div.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2.col-xs-12
-    %h2
-      Type in your city or town to begin
+  %div.col-lg-6
+    %h3{ style: "text-align: right;" }
+      Select your city or town to begin:
+  %div.col-lg-6
     %form{action: form_path, method: 'post'}
       %div.input-group.input-group-lg
-        %input{class: 'form-control typeahead', type: 'text', placeholder: "i.e. #{random_muni}", name: 'id'}
-        %span.input-group-btn
-          %button.btn.btn-success.btn-default
-            Get started!
-            %span.glyphicon.glyphicon-circle-arrow-right
+        .dropdown
+          %button#dropdownMenu1.btn.btn-lg.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button", style: 'margin-top: 11px;'}
+            Cities and Towns
+            %span.caret
+          %ul.dropdown-menu.col-md-6.scrollable-menu{"aria-labelledby" => "dropdownMenu1"}
+            - @muni_names.each do |name|
+              %li= link_to name, municipality_path(name.downcase)
 
 %div.row.features
-  
-  %div.row 
+
+  %div.row
     %div.col-md-12
       %h2 What's Inside
 
@@ -36,7 +39,7 @@
 
     %p
       Access rich, value-added data compiled from U.S. Census, Building Permits, Zillow, MAPC Projections, and more. Compare your city or town to its neighbors, region, and state.
-  
+
   %div.col-lg-4.feature
     %h4 Guidance
 

@@ -20,10 +20,13 @@
 //= require tufted.js
 //= require FileSaver.js
 //= require jszip.min.js
-
-
 $(document).ready(function () {
-  $('.typeahead').typeahead({ prefetch: '/munis.json' });
+
+  console.log('.')
+
+  $('.dropdown-toggle').dropdown();
+
+  $('input .typeahead').typeahead({ prefetch: '/munis.json' });
 
   $('#start-planning').on('click', function () {
     $('html, body').animate({ scrollTop: 0 }, 'slow');
