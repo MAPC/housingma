@@ -5,9 +5,10 @@
         %button.close{type: 'button', data: {dismiss: 'modal'}} &times;
         %h4.modal-title 1
       %div.modal-body
-        Metropolitan Area Planning Council.
-        %em Regional Growth Projections.
-        %a{href: 'http://mapc.org/projections', target: '_blank'} mapc.org/projections
+        :markdown
+          Metropolitan Area Planning Council.
+          *Regional Growth Projections.*
+          [mapc.org/projections](http://mapc.org/projections)
 
 %div.modal.fade{id: "footnote-2"}
   %div.modal-dialog
@@ -36,15 +37,10 @@
         %button.close{type: 'button', data: {dismiss: 'modal'}} &times;
         %h4.modal-title 4
       %div.modal-body
-        %p
-          A
-          %strong household
-          includes all the people who occupy a housing unit as their usual place of residence. A
-          %strong householder
-          is the person, or one of the people, in whose name the home is owned, being bought, or rented. A
-          %strong family
-          includes a householder and one or more people living in the same household who are related to the householder by birth, marriage, or adoption. See 
-          %a{href: "www.census.gov/glossary"} www.census.gov/glossary.
+        :markdown
+          A **household** includes all the people who occupy a housing unit as their usual place of residence. A **householder** is the person, or one of the people, in whose name the home is owned, being bought, or rented. A **family**
+          includes a householder and one or more people living in the same household who are related to the householder by birth, marriage, or adoption. See
+          [census.gov/glossary](http://www.census.gov/glossary).
 
 %div.modal.fade{id: "footnote-5"}
   %div.modal-dialog
@@ -53,11 +49,9 @@
         %button.close{type: 'button', data: {dismiss: 'modal'}} &times;
         %h4.modal-title 5
       %div.modal-body
-        %p
-          %strong Elderly
-          includes people 62 and over.
-          %strong Elderly households
-          have an elderly householder.
+        :markdown
+          **Elderly** includes people 62 and over.
+          **Elderly households** have an elderly householder.
 
 %div.modal.fade{id: "footnote-6"}
   %div.modal-dialog
@@ -66,38 +60,40 @@
         %button.close{type: 'button', data: {dismiss: 'modal'}} &times;
         %h4.modal-title 6
       %div.modal-body
-        %p
+        :markdown
           Reported building permits are an imperfect measure of housing growth. In some cases, they overestimate the net increase in housing units if not all permitted projects are ultimately constructed or if demolition of preexisting units is required. In other cases, they may underestimate new growth due to lack of reporting or because adaptive reuse is not captured in the data.
 
 
-%h1#introduction Introduction
+:markdown
 
-%p Housing production is one of the most profound challenges facing Massachusetts, and one in which each city and town has a unique and important role to play. Creating enough homes to accommodate the next generation of workers while also addressing the complex needs of an aging and increasingly diverse population will require cities and towns across the state to implement new plans and policies that usher in a new era of housing production. 
+  # Introduction
 
-%p The high cost of housing and lack of affordable or attractive options for many households has many negative consequences that affect the whole state. Housing costs are a major contributor to the state’s notoriously high cost of living, and eclipse taxes as a major disincentive to firms and talented workers thinking of locating here. Paying an excessive amount of income on housing means families have less money to spend on other essentials like food or health care, and spend less money at local businesses. Finally, high housing costs, especially in and near urban areas, have caused many households to search farther afield, “driving until they qualify” in the sprawl frontier past I-495 where large lots, low density, and long commutes cause local environmental damage, increased emissions, and higher transportation costs.
+  Housing production is one of the most profound challenges facing Massachusetts, and one in which each city and town has a unique and important role to play. Creating enough homes to accommodate the next generation of workers while also addressing the complex needs of an aging and increasingly diverse population will require cities and towns across the state to implement new plans and policies that usher in a new era of housing production.
 
-%p One fundamental solution to the state’s housing challenge is more proactive efforts to plan for increased housing production at the local level.  Each city and town has different needs, different constraints, and different opportunities for new growth, but all can play a role in meeting the state’s housing needs.  Furthermore, many important principles of housing production apply across the Commonwealth: communities need a diversity of housing types to meet future housing needs; increased production at all price levels is critical to improving affordability; and well-located and well-designed new housing can revitalize local business districts while reducing auto miles travelled.
+  The high cost of housing and lack of affordable or attractive options for many households has many negative consequences that affect the whole state. Housing costs are a major contributor to the state’s notoriously high cost of living, and eclipse taxes as a major disincentive to firms and talented workers thinking of locating here. Paying an excessive amount of income on housing means families have less money to spend on other essentials like food or health care, and spend less money at local businesses. Finally, high housing costs, especially in and near urban areas, have caused many households to search farther afield, “driving until they qualify” in the sprawl frontier past I-495 where large lots, low density, and long commutes cause local environmental damage, increased emissions, and higher transportation costs.
 
-%p This report provides an overview of the current demographics of #{@report.muni}, the existing housing stock, projected changes in housing demand over the coming decades, and the types of new housing that are needed to meet that need.  
+  One fundamental solution to the state’s housing challenge is more proactive efforts to plan for increased housing production at the local level.  Each city and town has different needs, different constraints, and different opportunities for new growth, but all can play a role in meeting the state’s housing needs.  Furthermore, many important principles of housing production apply across the Commonwealth: communities need a diversity of housing types to meet future housing needs; increased production at all price levels is critical to improving affordability; and well-located and well-designed new housing can revitalize local business districts while reducing auto miles travelled.
+
+  This report provides an overview of the current demographics of #{@report.muni}, the existing housing stock, projected changes in housing demand over the coming decades, and the types of new housing that are needed to meet that need.
 
 
-%h2#introduction-legal-context The Legal Context for Housing Production Planning
+  ## [The Legal Context for Housing Production Planning](#introduction-legal-context)
 
-%p Housing production has been an important goal of the Commonwealth for decades.  The Comprehensive Permit Act consists of Massachusetts General Laws (MGL) Chapter 40B, Sections 20 through 23, along with associated regulations issued and administered by the Massachusetts Department of Housing and Community Development (DHCD). It was enacted in 1969 to encourage the production of affordable housing in all the cities and towns of the Commonwealth.
+  Housing production has been an important goal of the Commonwealth for decades.  The Comprehensive Permit Act consists of Massachusetts General Laws (MGL) Chapter 40B, Sections 20 through 23, along with associated regulations issued and administered by the Massachusetts Department of Housing and Community Development (DHCD). It was enacted in 1969 to encourage the production of affordable housing in all the cities and towns of the Commonwealth.
 
-%p In municipalities that fail to meet their affordable housing obligations under Chapter 40B, a developer can apply for a “Comprehensive Permit” that enables them to build more densely than municipal zoning bylaws would permit, if at least 25% (or 20% in certain cases) of the new units are affordable.  For purposes of comprehensive permitting, “adequate progress” means that more than 10% of the year-round housing units qualify as affordable in the Subsidized Housing Inventory (see more detail below), or that the municipality has an approved housing production plan and has met annual or biennial housing production targets. In some cases, as-of-right zoning for multi-family or higher-density housing can help demonstrate “adequate progress.”  Despite its controversy, Massachusetts voters rejected an initiative petition to repeal the law in November of 2010.
+  In municipalities that fail to meet their affordable housing obligations under Chapter 40B, a developer can apply for a “Comprehensive Permit” that enables them to build more densely than municipal zoning bylaws would permit, if at least 25% (or 20% in certain cases) of the new units are affordable.  For purposes of comprehensive permitting, “adequate progress” means that more than 10% of the year-round housing units qualify as affordable in the Subsidized Housing Inventory (see more detail below), or that the municipality has an approved housing production plan and has met annual or biennial housing production targets. In some cases, as-of-right zoning for multi-family or higher-density housing can help demonstrate “adequate progress.”  Despite its controversy, Massachusetts voters rejected an initiative petition to repeal the law in November of 2010.
 
-%p For the purposes of this statute, affordable housing is defined as a unit that could be purchased or rented by a household making up to 80% of the area median income (AMI). 
+  For the purposes of this statute, affordable housing is defined as a unit that could be purchased or rented by a household making up to 80% of the area median income (AMI).
 
-%h1#demo Demographics
+  # [Demographics](#demo)
 
-%p Housing needs and preferences change over time. Young professionals and seniors on fixed incomes may prefer smaller, more affordable units that are easier to maintain. Families with children may want larger units with more bedrooms and open space.  This section describes the population of #{@report.muni} by age and how it is projected to change.
+  Housing needs and preferences change over time. Young professionals and seniors on fixed incomes may prefer smaller, more affordable units that are easier to maintain. Families with children may want larger units with more bedrooms and open space.  This section describes the population of #{@report.muni} by age and how it is projected to change.
 
 %p
-  #{@report.muni} is home to #{@report.pop_2010} residents, 
-  #{ Calc.new(@report.pop_2000, @report.pop_2010).percent_change_increase(context: :of) } from 2000. In 2010, working-age adults between 20 and 65 made up 
-  #{ Calc.new(@report.working_age_adults_20_65, @report.pop_2010).percent_text } of the population and seniors over 65 made up 
-  #{ Calc.new(@report.pop10_65p, @report.pop_2010).percent_text } School-age children, between 5 and 19, make up 
+  #{@report.muni} is home to #{@report.pop_2010} residents,
+  #{ Calc.new(@report.pop_2000, @report.pop_2010).percent_change_increase(context: :of) } from 2000. In 2010, working-age adults between 20 and 65 made up
+  #{ Calc.new(@report.working_age_adults_20_65, @report.pop_2010).percent_text } of the population and seniors over 65 made up
+  #{ Calc.new(@report.pop10_65p, @report.pop_2010).percent_text } School-age children, between 5 and 19, make up
   #{ Calc.new(@report.pop10_5_19, @report.pop_2010).percent_text } of current residents. Between 2005 and 2012, school enrollment
   #{ Calc.new(@report.enroll_chg).number_increase(tense: :past) }, or
   #{ Calc.new(@report.enroll_chg, (@report.enrolled - @report.enroll_chg)).percent_text }
@@ -119,7 +115,7 @@
   In #{@report.muni}, the aging of the Baby Boomers will cause the senior population to
   #{ Calc.new(@report.pop10_65p, @report.pop30_65p).number_increase } people, or
   #{ Calc.new(@report.pop10_65p, @report.pop30_65p).percent_change_text }, through 2030, as seen in Figure 1. The total population is projected to
-  #{ Calc.new(@report.pop_2010, @report.pop_30sr).number_increase }, or 
+  #{ Calc.new(@report.pop_2010, @report.pop_30sr).number_increase }, or
   #{ Calc.new(@report.pop_2010, @report.pop_30sr).percent_change_text }, over the same period.
 
 %p
@@ -137,7 +133,7 @@
 
 %p
   Massachusetts has grown more diverse since 2000. Between 2000 and 2010, the non-white population
-  #{Calc.new(@report.minor_00, @report.minor_10).percent_change_increase(tense: :past)}. Meanwhile, the white, non-Hispanic population 
+  #{Calc.new(@report.minor_00, @report.minor_10).percent_change_increase(tense: :past)}. Meanwhile, the white, non-Hispanic population
   #{Calc.new(@report.whi_00, @report.nhwhi).percent_change_increase(tense: :past)}.
 
 %h1#demand Demand
@@ -175,7 +171,7 @@
 
   %li
     total households in #{@report.muni} are projected to
-    #{ Calc.new(@report.hh_10, @report.hh_30sr).number_increase(context: :by) } through 2030, 
+    #{ Calc.new(@report.hh_10, @report.hh_30sr).number_increase(context: :by) } through 2030,
     #{ Calc.new(@report.hh_10, @report.hh_30sr).percent_change_increase(context: :of) } from 2010;
 
   %li
@@ -185,7 +181,7 @@
 
 %ul
   %li
-    as the Baby Boomer generation ages, the number of householders over 60 will 
+    as the Baby Boomer generation ages, the number of householders over 60 will
     #{ Calc.new(@report.househld_60_pl_2010, @report.househld_60_pl_2030).number_increase }, from
     #{ Calc.new(@report.househld_60_pl_2010, @report.hh_10).percent_text } to
     #{ Calc.new(@report.househld_60_pl_2030, @report.hh_30sr).percent_text } of the total households in #{@report.muni};
@@ -194,12 +190,12 @@
     net housing unit demand will be #{@report.net_housing_demand_2020} through 2020, or #{@report.net_housing_demand_2020_ann} annually;
 
   %li
-    net housing unit demand for householders currently between the ages of 15 and 35 will be #{@report.hu1534_20}, or 
+    net housing unit demand for householders currently between the ages of 15 and 35 will be #{@report.hu1534_20}, or
     = @report.net_annual_demand
     annually; and
 
   %li
-    over the next ten years, householders currently older than 55 will need 
+    over the next ten years, householders currently older than 55 will need
     #{ Calc.new(@report.net_housing_demand_55_pl_2020).more }
     units than they do today
     #{ ", putting #{@report.putting_back_sf} single family houses back onto the market on average each year" if Calc.new(@report.net_housing_demand_55_pl_2020).more.include?('fewer') }.
@@ -217,7 +213,7 @@
   #{ Calc.new(@report.hh_00, @report.hh_10).number_increase(tense: :past) }, or
   #{ Calc.new(@report.hh_00, @report.hh_10).percent_change_text }, between 2000 and 2010. At the same time, average household size
   #{ Calc.new(@report.hh_avg00, @report.hh_avg10).increase(tense: :past, context: :none) } from
-  #{ @report.hh_avg00(round: false) } to 
+  #{ @report.hh_avg00(round: false) } to
   #{ @report.hh_avg10(round: false) }.
 
 %h3#demand-households-age Households by Age Cohort
@@ -230,8 +226,8 @@
 
 
 %p
-  In #{@report.muni}, householders over 60 will 
-  #{ Calc.new(@report.househld_60_pl_2010_p, @report.househld_60_pl_2030_p).increase(context: :none) } from 
+  In #{@report.muni}, householders over 60 will
+  #{ Calc.new(@report.househld_60_pl_2010_p, @report.househld_60_pl_2030_p).increase(context: :none) } from
   #{ Calc.new(@report.househld_60_pl_2010, @report.hh_10).percent_text } of the population in 2010 to
   #{ Calc.new(@report.househld_60_pl_2030, @report.hh_30sr).percent_text } in 2030,
   #{ Calc.new(@report.househld_60_pl_2010, @report.househld_60_pl_2030).percent_change_increase(context: :of, percent: '') } percent. Meanwhile, under-60 householders will
@@ -261,7 +257,7 @@
 
 %p
   Through 2020, new households headed by someone currently under the age of 35 will need an additional #{@report.hu1534_20} housing units.  Households headed by someone currently between the ages of 35 and 55 will demand
-  #{ Calc.new(@report.hu3554_20).more } units. Householders currently over the age of 55 will need 
+  #{ Calc.new(@report.hu3554_20).more } units. Householders currently over the age of 55 will need
   #{ Calc.new(@report.househld_55_pl_will_need).more } units than they do today. After accounting for the units freed up by departing seniors and the units needed to maintain a healthy vacancy rate, this translates into net demand for #{@report.net_demand_sf_2020} single family and #{@report.net_demand_mf_2020}
   multi-family units. Figure 3 breaks projected demand down by householder cohort, unit type, and tenure.
 
@@ -303,7 +299,7 @@
 
 %p Affordability is measured in several ways. In this section, we will measure affordability according to:
 
-%ul 
+%ul
   %li the percent of households that pay more than 30% and 50% of income on housing costs (“cost burdened” and “severely cost burdened,” respectively), by household tenure, income, and type;
   %li the percent of housing units listed on the Massachusetts Subsidized Housing Inventory (SHI);
   %li the percent of recent home sales affordable to low and median income households; and
@@ -362,7 +358,7 @@
 %p
   In #{@report.muni}, #{@report.amiu30p}%, #{@report.ami3050p}%, and #{@report.ami5080p}% of households are extremely low, very low, and low income, respectively. This means that
   = @report.amiu30p + @report.ami3050p + @report.ami5080p
-  percent of all households qualify for federal and state affordable housing programs based on household income. 
+  percent of all households qualify for federal and state affordable housing programs based on household income.
 
 %h2#afford-cost-burden Housing Cost Burden
 

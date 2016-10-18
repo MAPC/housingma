@@ -1,11 +1,15 @@
-language: ruby
+sudo: false
 rvm:
-- 2.0.0
-- 2.0.0-p247
+  - 2.1.5
 bundler_args: "--without production"
-notifications:
-  slack:
-    secure: aObmYdbc5gcPCHcXBdSIgiVNlugePt7pekg3AQUuL1LJcZCBSCV1Q+no3f1wGwI90fTJyRVJ8CMVoqcfnWyS5bFEv4p25BYuwbgsslrkh7sULN696Nyh9nYLovtuE1qoAKesKiA78ex2rTQnLJbQMcnorqe8I5o86fvJb9UmKpI=
+before_script:
+  - export TZ=America/New_York
+  - psql -c 'create database housingma_test;' -U postgres
+  - bundle exec rake db:create db:schema:load db:migrate
+script:
+  - bundle exec rake test
+cache: bundler
 addons:
+  postgresql: '9.3'
   code_climate:
     repo_token: 5bd43fe2d0cd6a1e84db9d387bb2cb1726d80e08c329b64c09fd934934f9882b

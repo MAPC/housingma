@@ -128,7 +128,7 @@ img.whats-inside {
   color: #FFF;
   margin-top: 40px;
   padding: 3px 0 10px;
-  h2, h3, h4 { 
+  h2, h3, h4 {
     text-align: center;
     font-weight: 300;
   }
@@ -142,9 +142,15 @@ img.whats-inside {
     color: white;
   }
   .btn {
-    background-color: $green;
+    background-color: white;
     color: $dark-blue;
   }
+}
+
+.scrollable-menu {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
 }
 
 .features {
@@ -219,7 +225,7 @@ img.whats-inside {
 
 /* Autocomplete / Typeahead */
 
-input { 
+input {
   min-height: 44px;
   padding: 4px 12px;
   border-top-left-radius:    8px !important;
@@ -396,7 +402,7 @@ input {
   border:    1px solid #22A;
 
   span.btn-title { font-size: 135%; }
-  p { 
+  p {
     font-size: 100%;
     margin: 0 0 1px;
   }
@@ -468,7 +474,7 @@ table.data {
 .topic      { background-color: #EEE }
 .subtopic   { background-color: #FFF }
 
-table.guide { 
+table.guide {
   max-width: 700px;
   th {
     width: 120px;
@@ -559,7 +565,7 @@ ul.contact {
 
 /* Scrollspy */
 
-.bs-sidenav ul > li { 
+.bs-sidenav ul > li {
   list-style-type: none;
   margin-left: 10px;
 }
@@ -586,7 +592,7 @@ ul.contact {
             li.active { }
           }
         }
-        li.active > a { 
+        li.active > a {
           border-left: 2px #5E8AC7 solid;
         }
       }

@@ -7,6 +7,7 @@ class StaticPagesController < ApplicationController
   def help ; end
 
   def index
+    @muni_names = Municipality.unscoped.order(:name).pluck(:name)
     render layout: 'application'
   end
 
@@ -18,7 +19,7 @@ class StaticPagesController < ApplicationController
   def download
     render 'municipalities/download'
   end
-  
+
 
 
   def munis

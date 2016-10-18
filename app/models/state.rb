@@ -1,5 +1,5 @@
 class State < ActiveRecord::Base
-  establish_connection 'commondata'
+  establish_connection ENV.fetch('COMMON_DB_URL')
 
   has_many :municipalities
   has_many :housing_data,      through: :municipalities
@@ -9,6 +9,6 @@ class State < ActiveRecord::Base
   def to_s
     name
   end
-  
+
   include Aggregations
 end

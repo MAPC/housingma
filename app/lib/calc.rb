@@ -95,7 +95,7 @@ class Calc
       if @second_number.nil?
         @number > 0 ? 'increase' : 'decrease'
       else
-        @second_number > @number ? 'increase' : 'decrease' 
+        @second_number > @number ? 'increase' : 'decrease'
       end
     end
 
@@ -104,7 +104,7 @@ class Calc
       if @second_number.nil?
         @number > 0 ? 'more' : 'fewer'
       else
-        @second_number > @number ? 'more' : 'fewer' 
+        @second_number > @number ? 'more' : 'fewer'
       end
     end
 
@@ -112,7 +112,7 @@ class Calc
     def contextualize(phrase, options)
       context = options.fetch(:context) {:by} # default to context: :by
       past    = options[:tense] == :past ? 'd' : ''
-      
+
       return "#{phrase}#{past}"            if context == :none
       result = "#{phrase}#{past} by"       if context == :by
       result = "#{phrase.indefinitize} of" if context == :of
