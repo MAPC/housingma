@@ -1,34 +1,34 @@
-source 'http://rubygems.org'
-ruby '2.1.5'
+source 'https://rubygems.org'
+ruby '2.6.5'
 
-gem 'rails', '3.2.13'
+gem 'rails', '6.0.2.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg', '0.17.1'
-gem 'activerecord-postgis-adapter'
+gem 'pg', '1.2.2'
+gem 'activerecord-postgis-adapter', '6.0.0'
 
-gem 'rgeo', '0.3.20'
-gem 'rgeo-geojson', '0.3.1'
+gem 'rgeo', '2.1.1'
+gem 'rgeo-geojson', '2.1.1'
 
 #    app server
-gem 'puma'
-gem 'dotenv-rails'
+gem 'puma', '4.3.1'
+gem 'dotenv-rails', '2.7.5'
 
 #    Render HAML content for narratives
-gem 'haml', '4.0.5'
-gem 'redcarpet' # Render Markdown in HAML
-gem 'd3-rails', '3.4.4'
+gem 'haml', '5.1.2'
+gem 'redcarpet', '3.5.0' # Render Markdown in HAML
+gem 'd3_rails', '~> 4.1', '>= 4.1.1'
 gem 'tufted-rails', '0.0.2' # Terse D3 by Matt Gardner (allthesignals)
-gem 'crease' # Simpler text helpers by Matt Cloyd (beechnut)
+gem 'crease', '0.1.2' # Simpler text helpers by Matt Cloyd (beechnut)
 
 #    Export Word files
 gem 'docx_replace', git: "git://github.com/beechnut/docx_replace.git"
 
 #    Autocomplete
-gem 'twitter-typeahead-rails', '0.10.2'
-gem 'bootstrap-typeahead-rails', '0.9.3.3'
+gem 'twitter-typeahead-rails', '0.11.1'
+gem 'bootstrap-typeahead-rails', '0.10.5.1'
 
 #      For user management of plan
 # gem 'devise'
@@ -36,50 +36,48 @@ gem 'bootstrap-typeahead-rails', '0.9.3.3'
 # gem 'cancan'
 
 # TODO: Consider adding machine-readability
-gem 'rabl', '0.9.3' # RABL templates for JSON
-gem 'oj',   '2.9.0'
+gem 'rabl', '0.14.2' # RABL templates for JSON
+gem 'oj',   '3.10.2'
 
 
 group :development do
-  gem 'capistrano',      '~> 2.0'
-  gem 'net-ssh',         '2.7.0'
-  gem 'net-ssh-gateway', '1.2.0'
+  gem 'capistrano',      '< 3.0'
+  gem 'net-ssh',         '5.2.0'
+  gem 'net-ssh-gateway', '2.0.0'
   gem 'capistrano-unicorn', '0.2.0', :require => false
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  gem 'better_errors', '2.5.1'
+  gem 'binding_of_caller', '0.8.0'
 end
 
 group :development, :test do
-  gem 'progress_bar'
+  gem 'progress_bar', '1.3.1'
+  gem 'listen'
 
-  gem 'rspec-rails', '3.0.1'
-  gem 'capybara',    '2.2.0'
-  gem 'launchy'
+  gem 'rspec-rails', '3.9.0'
+  gem 'capybara',    '3.31.0'
+  gem 'launchy', '2.4.3'
 end
 
 group :test do
-  gem 'rake', '10.3.2'
-  gem "codeclimate-test-reporter", require: nil
+  gem 'rake', '13.0.1'
+  gem "codeclimate-test-reporter", '1.0.9', require: nil
 end
 
 group :production do
-  gem 'rails_12factor'
+  gem 'rails_12factor', '0.0.3'
 end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', '3.2.6'
-  gem 'sass',       '3.3.10'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '6.0.0'
+  gem 'sass',       '3.7.4'
+  gem 'coffee-rails', '5.0.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', platforms: :ruby
+  gem 'therubyracer', '0.12.3', platforms: :ruby
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '4.2.0'
 end
 
-gem 'jquery-rails', '3.1.1'
-
-
-
+gem 'jquery-rails', '4.3.5'
