@@ -1,6 +1,4 @@
 class Quotation < ActiveRecord::Base
-  attr_accessible :quote, :author, :agency, :sort_order
-
   validates :quote,     presence: true, length: { minimum: 3, maximum: 1700 }
   validates :author,    presence: true, length: { minimum: 3, maximum: 100 }
   validates :agency,    allow_blank: true, length: { minimum: 3, maximum: 180 }

@@ -20,8 +20,6 @@ class StaticPagesController < ApplicationController
     render 'municipalities/download'
   end
 
-
-
   def munis
     render json: Municipality.unscoped.order(:id).pluck(:name)
   end
