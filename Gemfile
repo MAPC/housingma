@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.6.5'
 
 gem 'rails', '6.0.2.1'
+gem 'sassc', '~> 2.2', '>= 2.2.1'
+gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -70,8 +72,6 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', '6.0.0'
-  gem 'sass',       '3.7.4'
   gem 'coffee-rails', '5.0.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

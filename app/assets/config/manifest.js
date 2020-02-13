@@ -1,10 +1,3 @@
-  //= link logo.jpg
-  //= link MAPC_logo.jpg
-  //= link rich-data.png
-  //= link guidance.png
-  //= link everyone.png
-  //= link profile.png
-  //= link report.png
-  //= link download.png
-  //= link application.css
-  //= link application.js
+//= link_tree ../images
+//= link_tree ../javascripts .js
+//= link_tree ../stylesheets .css
