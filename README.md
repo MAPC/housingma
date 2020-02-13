@@ -4,8 +4,20 @@
 
 > Simple housing production plans and data for Massachusetts
 
-## Roadmap
+## Local development
+Make sure your local .ENV file reflects the values stored in Heroku's config vars; the app will not run locally without these.
 
+## Deployment
+There are two Heroku apps for HousingMA: one for staging and one for production. In order to push changes to either, you'll need to set up a Heroku account linked to the MAPC team and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+
+To push local changes from master to staging, run
+`git push staging master`
+
+And to push changes to production, run
+`git push production master`
+
+## Roadmap
+- Link Heroku to GitHub for automatic build pipelines.
 - [beechnut created a gem called `crease`][crease]. Use it to swap out the calculations in the template from methods like `Calc.method(params).another_method(args)` to simple English like `an.increase.of(params).percent`.
 - [Replace Haml templates with Markdown](hamdown), and possibly make them dynamic and re-orderable.
 - Add seed data so we can test the app out quickly. Add instructions because there are two databases that need to be created, and that's not evident until you run into errors.
