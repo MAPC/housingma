@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Merriweather:300,400,400i|Oswald:700&display=swap');
+@import 'bootstrap';
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: font-path('/assets/fonts/glyphicons-halflings-regular.eot');
+  src: font-path('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  font-path('/assets/fonts/glyphicons-halflings-regular.woff') format('woff'), 
+  font-path('/assets/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+  font-path('/assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
 
 /* basic typography */
 $orange:     #F7AD4D;
