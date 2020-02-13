@@ -2,10 +2,9 @@ class Municipality < ActiveRecord::Base
   establish_connection ENV.fetch('COMMON_DB_URL')
 
   GEOFACTORY = RGeo::Geographic.spherical_factory(srid: 4326)
-  set_rgeo_factory_for_column(:geom, GEOFACTORY)
+  # set_rgeo_factory_for_column(:geom, GEOFACTORY)
 
   attr_accessor   :neighbors
-  attr_accessible :name, :muni_id, :geom
 
   has_one :housing_data, foreign_key: 'muni_id'
 

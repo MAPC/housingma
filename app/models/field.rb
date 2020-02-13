@@ -1,10 +1,4 @@
-class Field < ActiveRecord::Base
-  attr_accessible :alias,
-                  :description,
-                  :name,
-                  :narrative,
-                  :title
-  
+class Field < ActiveRecord::Base  
   alias_attribute :name, :title
   alias_attribute :description, :narrative
 

@@ -16,13 +16,9 @@
         =link_to 'License & Terms', terms_path
 
   %div.row
-    %div.col-xs-1
-      %span#built
-        %a{href: "http://bostonbuilt.org", target: '_blank'}
-          %img{src: 'http://bostonbuilt.org/boston_built/b_logo_small.png', width: '80'}
-    %div.col-sm-4.col-sm-offset-3.col-xs-11
+    %div.col-sm-6.col-sm-offset-3.col-xs-11
       %p.center#built-in-boston
-        Built in Boston by
+        Built by
       %center
         %a{href:  'http://www.mapc.org', target: '_blank'}
-          %img{src: 'http://www.mapc.org/sites/default/files/mapc_logo.png'}
+          = image_tag('MAPC_logo.jpg', class: "logo__mapc")

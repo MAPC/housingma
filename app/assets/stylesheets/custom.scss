@@ -1,7 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Oswald:700|Lato:400,300|Merriweather:400,400italic,300);
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Merriweather:300,400,400i|Oswald:700&display=swap');
+@import 'bootstrap';
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: font-path('/assets/fonts/glyphicons-halflings-regular.eot');
+  src: font-path('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  font-path('/assets/fonts/glyphicons-halflings-regular.woff') format('woff'), 
+  font-path('/assets/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+  font-path('/assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
 
 /* basic typography */
-
 $orange:     #F7AD4D;
 $light-blue: #5FB0D8;
 $dark-blue:  #134B8E;
@@ -26,6 +35,7 @@ $state-warning-bg:      #FCF3BA !default;
 $state-danger-bg:       #f2dede !default;
 $state-primary-bg:      #D5EAFF !default;
 
+
 body {
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
@@ -43,6 +53,10 @@ p { font-size: 16px; }
   img {
     display: inline-block;
   }
+}
+
+.logo__mapc {
+  width: 200px;
 }
 
 img.whats-inside {
@@ -115,11 +129,6 @@ img.whats-inside {
   border-bottom: $light-border;
   font-weight: 400;
 }
-
-#services {
-  a.dropdown-toggle { }
-}
-
 
 /* Home   */
 
@@ -460,11 +469,6 @@ table.data {
 }
 
 .topic-area, .topic, .subtopic {
-  th {
-    // TODO Headers should be visible when jumping with scrollspy.
-    // padding-top: 60px;
-    // margin-top: -60px;
-  }
   h1, h2, h3, h4, h5, h6 {
     text-align: left;
   }
@@ -589,7 +593,6 @@ ul.contact {
           font-weight: 800;
           ul {
             display: block;
-            li.active { }
           }
         }
         li.active > a {
@@ -651,5 +654,42 @@ ul.contact {
   opacity:   0.2;
   img {
     width: 50px;
+  }
+}
+
+textarea:focus, input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(13, 189, 183, 0.8);
+  /* We don't have the LESS .box-shadow function in plain CSS */
+  box-shadow:         inset 0 1px 1px rgba(0,0,0,.075), 0 0 20px rgba(255, 255, 255, 1);
+  -moz-box-shadow:    inset 0 1px 1px rgba(0,0,0,.075), 0 0 20px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 20px rgba(255, 255, 255, 1);
+  outline: 0;
+  outline: thin dotted \9; /* IE6-9 */
+}
+
+.download-table {
+  &__header {
+    text-align: left;
+  }
+
+  &__cell {
+    text-align: left;
+    &--long {
+      word-break: break-all;
+    }
   }
 }
