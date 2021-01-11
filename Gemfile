@@ -21,7 +21,7 @@ gem 'dotenv-rails', '2.7.5'
 
 #    Render HAML content for narratives
 gem 'haml', '5.1.2'
-gem 'redcarpet', '3.5.0' # Render Markdown in HAML
+gem 'redcarpet', '3.5.1' # Render Markdown in HAML
 gem 'd3_rails', '~> 4.1', '>= 4.1.1'
 gem 'tufted-rails', '0.0.2' # Terse D3 by Matt Gardner (allthesignals)
 gem 'crease', '0.1.2' # Simpler text helpers by Matt Cloyd (beechnut)
