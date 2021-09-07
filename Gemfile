@@ -48,7 +48,7 @@ group :development do
   gem 'net-ssh',         '5.2.0'
   gem 'net-ssh-gateway', '2.0.0'
   gem 'capistrano-unicorn', '0.2.0', :require => false
-  gem 'better_errors', '2.5.1'
+  gem 'better_errors', '2.9.1'
   gem 'binding_of_caller', '0.8.0'
 end
 
