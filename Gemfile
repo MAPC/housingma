@@ -16,7 +16,7 @@ gem 'rgeo', '2.1.1'
 gem 'rgeo-geojson', '2.1.1'
 
 #    app server
-gem 'puma', '4.3.1'
+gem 'puma', '5.6.2'
 gem 'dotenv-rails', '2.7.5'
 
 #    Render HAML content for narratives
